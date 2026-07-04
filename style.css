@@ -1,0 +1,161 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Geist Sans', -apple-system, sans-serif;
+    min-height: 200vh; /* Forzamos un mínimo de altura total para garantizar el área de scroll */
+}
+
+/* --- ESTILOS DE LA LANDING (PANTALLA 1) --- */
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 2rem 4rem 4rem 4rem;
+    position: relative;
+    z-index: 10;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.nav-item {
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 1.05rem;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+/* Hovers personalizados */
+.nav-item.hover-cv:hover { color: #9AD0EB; }
+.nav-item.hover-pensamiento:hover { color: #1F8587; }
+.nav-item.hover-produccion:hover { color: #A24190; }
+.nav-item.hover-revista:hover { color: #E66F1F; }
+.nav-item.hover-contacto:hover { color: #DBBA00; }
+
+/* Flecha del fondo con transición de opacidad */
+.scroll-arrow {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 1;
+    z-index: 100; /* Nos aseguramos de que nada la tape y pueda cambiar de opacidad */
+}
+
+/* --- ESTILOS DE LA BIENVENIDA Y GALERÍA (PANTALLA 2) --- */
+.content-section {
+    min-height: 100vh;
+    padding: 10rem;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 30vh; 
+}
+
+/* Contenedor partido en dos: Texto (izq) y Galería (der) */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Columna Izquierda: Texto */
+.text-block {
+    position: sticky; /* El texto acompaña sutilmente al scroll si es largo */
+    top: 4rem;
+}
+
+.welcome-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1rem, 6vw, 4rem);
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+    line-height: 1;
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    max-width: 500px;
+}
+
+/* Columna Derecha: Grilla de imágenes asimétrica (2 subcolumnas) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+/* Contenedores grises para simular las imágenes de tu maqueta */
+.gallery-item {
+    background-color: #e0e0e0; /* Color gris de tu mockup */
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+/* Alturas desiguales para recrear el diseño exacto de la imagen */
+.item-short { height: 260px; }
+.item-tall { height: 380px; }
+.item-medium { height: 340px; }
+.item-large { height: 460px; }
+.item-small { height: 200px; }
+
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr; /* Pasa a una sola columna en tablets/móviles */
+        gap: 3rem;
+    }
+    .text-block {
+        position: relative;
+        top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .landing-container { padding: 2rem 1.5rem 3rem 1.5rem; }
+    .bottom-nav { flex-direction: column; gap: 1.2rem; text-align: center; padding-bottom: 3rem; }
+    .content-section { padding: 3rem 1.5rem; }
+    .gallery-grid { gap: 1rem; }
+}

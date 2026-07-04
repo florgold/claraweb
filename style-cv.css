@@ -1,0 +1,177 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff; /* Un gris de fondo temporal para contrastar los papeles */
+    color: #000000;
+    font-family: 'Geist Sans', -apple-system, sans-serif;
+    min-height: 100vh;
+}
+
+/* Botón Volver arriba a la izquierda */
+.back-button {
+    position: absolute;
+    top: 4.5rem;
+    left: 3.5rem;
+    z-index: 200;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+.back-button:hover {
+    opacity: 0.5;
+}
+
+/* Contenedor central del CV */
+.cv-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cajas contenedoras que representarán cada trozo de papel */
+.cv-section {
+    width: 100%;
+    padding: 3rem 0; /* Espaciado arriba y abajo. El lateral lo maneja el contenido interno */
+}
+
+.section-content {
+    width: 100%;
+    /* Dejamos un padding lateral fijo y generoso para asegurar la simetría exacta */
+    padding: 0 15rem; 
+    margin: 0; /* Sacamos el margin auto que te lo rompía */
+}
+
+/* Tipografías específicas de los encabezados (Instrument Serif Italic) */
+.cv-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.cv-heading {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+}
+
+/* Bloques de textos generales */
+.cv-profile-text {
+    font-size: 1.05rem;
+    line-height: 1.2;
+    width: 100%; /* Ocupa el mismo ancho simétrico que el título */
+    text-align: justify;
+}
+
+/* Estructura interna de los ítems del CV */
+.cv-item {
+    margin-bottom: 1.8rem;
+    width: 100%; /* Alineado simétricamente */
+}
+
+.cv-item h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    display: block; /* Cambiado a block para que el título y la fecha se separen de forma natural sin usar <br> */
+    margin-bottom: 0.5rem; /* Controla el espacio exacto entre el título y la fecha */
+}
+
+.cv-item .cv-date {
+    font-size: 0.95rem;
+    color: #8c8c8c;
+    font-weight: 200; /* Hace la tipografía mucho más fina y ligera */
+    letter-spacing: 0.02em;
+    display: block;
+    margin-bottom: 0.3rem; /* Espacio entre la fecha y el texto descriptivo de abajo */
+}
+.cv-item p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #2b2b2b;
+    margin-top: 0.1rem;
+}
+
+/* Distribución en dos columnas para Habilidades y Cursos */
+.section-split .split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+}
+
+/* Footer con el botón de descarga */
+.cv-footer {
+    width: 100%;
+    padding: 4rem 0 6rem 0;
+    text-align: center;
+}
+.download-link {
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #000000;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+.download-link:hover {
+    opacity: 0.6;
+}
+
+/* --- COLORES DE FONDO PARA CADA SECCIÓN --- */
+
+.cv-section.section-intro {
+    background-color: #ffffff; /* Blanco para la intro original */
+}
+
+.cv-section.section-experience {
+    background-color: #C1E8F6; /* El celeste claro que querías para experiencia */
+}
+
+.cv-section.section-education {
+    background-color: #ffffff; /* Podés alternar con blanco */
+}
+
+.cv-section.section-split {
+    background-color: #C1E8F6; /* Un tono sutil para habilidades/cursos, o el que prefieras */
+}
+
+.cv-footer {
+    background-color: #ffffff; /* Fondo del botón de abajo */
+}
+
+/* --- RESPONSIVE / ADAPTABILIDAD --- */
+@media (max-width: 768px) {
+    .cv-section {
+        padding: 3rem 2rem;
+    }
+    
+    .section-split {
+        grid-template-columns: 1fr; /* Se apilan en pantallas de celular */
+        gap: 3rem;
+    }
+    
+    .cv-name {
+        font-size: 2.8rem;
+    }
+    
+    .cv-heading {
+        font-size: 2.3rem;
+    }
+
+    .back-button {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+    .section-content {
+        padding: 0 2rem; /* En celulares se achica el margen para que entre el texto */
+    }
+}
