@@ -1,0 +1,76 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff; /* Un gris de fondo temporal para contrastar los papeles */
+    color: #000000;
+    font-family: 'Geist Sans', -apple-system, sans-serif;
+    min-height: 100vh;
+}
+
+/* Botón Volver arriba a la izquierda */
+.back-button {
+    position: absolute;
+    top: 4.5rem;
+    left: 3.5rem;
+    z-index: 200;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+.back-button:hover {
+    opacity: 0.5;
+}
+
+/* Contenedor central del CV */
+.cv-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+}
+
+/* Cajas contenedoras que representarán cada trozo de papel */
+.cv-section {
+    width: 100%;
+    padding: 3rem 0; /* Espaciado arriba y abajo. El lateral lo maneja el contenido interno */
+}
+
+.section-content {
+    width: 100%;
+    /* Dejamos un padding lateral fijo y generoso para asegurar la simetría exacta */
+    padding: 0 15rem; 
+    margin: 0; /* Sacamos el margin auto que te lo rompía */
+}
+
+
+/* Bloques de textos generales */
+.cv-profile-text {
+    font-size: 1.05rem;
+    line-height: 1.2;
+    width: 100%; /* Ocupa el mismo ancho simétrico que el título */
+    text-align: center;
+}
+
+
+/* --- RESPONSIVE / ADAPTABILIDAD --- */
+@media (max-width: 768px) {
+    .cv-section {
+        padding: 3rem 2rem;
+    }
+
+    .back-button {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+    .section-content {
+        padding: 0 2rem; /* En celulares se achica el margen para que entre el texto */
+    }
+}

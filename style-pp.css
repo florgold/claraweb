@@ -1,0 +1,260 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff; /* Un gris de fondo temporal para contrastar los papeles */
+    color: #000000;
+    font-family: 'Geist Sans', -apple-system, sans-serif;
+    min-height: 100vh;
+}
+
+/* Botón Volver arriba a la izquierda */
+.back-button {
+    position: absolute;
+    top: 4.5rem;
+    left: 3.5rem;
+    z-index: 200;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+.back-button:hover {
+    opacity: 0.5;
+}
+
+/* Contenedor central del CV */
+.cv-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cajas contenedoras que representarán cada trozo de papel */
+.cv-section {
+    width: 100%;
+    padding: 3rem 0; /* Espaciado arriba y abajo. El lateral lo maneja el contenido interno */
+}
+
+.section-content {
+    width: 100%;
+    /* Dejamos un padding lateral fijo y generoso para asegurar la simetría exacta */
+    padding: 0 15rem; 
+    margin: 0; /* Sacamos el margin auto que te lo rompía */
+}
+
+/* Tipografías específicas de los encabezados (Instrument Serif Italic) */
+.cv-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.cv-heading {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+}
+
+/* Bloques de textos generales */
+.cv-profile-text {
+    font-size: 1rem;
+    line-height: 1.2;
+    width: 100%; /* Ocupa el mismo ancho simétrico que el título */
+    text-align: justify;
+}
+
+/* Estructura interna de los ítems del CV */
+.cv-item {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    width: 100%; /* Alineado simétricamente */
+}
+
+.cv-item p {
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #000000;
+    margin-top: 0.1rem;
+}
+
+/* Contenedor y barra de búsqueda */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem; /* Espacio generoso entre la barra y la grilla */
+    margin-top: 5rem;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 320px; /* Ancho de la barra de búsqueda */
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 0.9rem;
+    border: 1.5px solid #000000;
+    border-radius: 20px; /* Bordes redondeados idénticos a la imagen */
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #000000;
+    opacity: 0.6;
+}
+
+/* La gran grilla de dos columnas */
+.papers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 4rem 5rem; /* 4rem de espacio vertical, 5rem de espacio horizontal */
+    margin-bottom: 5rem;
+}
+
+/* Estructura de cada tarjeta individual */
+.paper-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem; /* Espacio entre la portada y el bloque de texto */
+}
+
+/* Portada del Paper */
+.paper-cover {
+    width: 220px;
+    min-width: 220px;
+    aspect-ratio: 1.15 / 1; /* Relación de aspecto levemente rectangular horizontal */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Sutil sombra de profundidad de la imagen */
+    border-radius: 2px;
+}
+
+/* Contenedor de textos del paper */
+.paper-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.paper-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.paper-description {
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    color: #000000;
+    margin-bottom: 1.rem;
+    text-align: justify;
+}
+
+/* Botón Leer Más */
+.read-more-btn {
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    margin-top: auto; /* Empuja el botón siempre al fondo si el texto es corto */
+    transition: opacity 0.2s ease;
+}
+
+.read-more-btn:hover {
+    opacity: 0.5;
+}
+
+/* --- COLORES DE FONDO PARA CADA SECCIÓN --- */
+
+.cv-section.section-intro {
+    background-color: #ffffff; /* Blanco para la intro original */
+}
+
+.pp-1 {
+    background-color: #C1E8F6; /* El celeste claro que querías para experiencia */
+}
+
+.pp-2 {
+    background-color: #7CA8AA; /* Podés alternar con blanco */
+}
+
+.pp-3 {
+    background-color: #B6C671; /* Un tono sutil para habilidades/cursos, o el que prefieras */
+}
+
+.papers {
+    background-color: #ffffff; /* Fondo del botón de abajo */
+}
+
+/* --- RESPONSIVE / ADAPTABILIDAD --- */
+@media (max-width: 768px) {
+    .cv-section {
+        padding: 3rem 2rem;
+    }
+    
+    .section-split {
+        grid-template-columns: 1fr; /* Se apilan en pantallas de celular */
+        gap: 3rem;
+    }
+    
+    .cv-name {
+        font-size: 2.8rem;
+    }
+    
+    .cv-heading {
+        font-size: 2.3rem;
+    }
+
+    .back-button {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+    .section-content {
+        padding: 0 2rem; /* En celulares se achica el margen para que entre el texto */
+    }
+}
+
+/* --- RESPONSIVE PAPERS --- */
+@media (max-width: 1024px) {
+    .papers-grid {
+        grid-template-columns: 1fr; /* Se hace una sola columna en pantallas medianas/chicas */
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .paper-card {
+        flex-direction: column; /* La portada se pone arriba del texto en celulares */
+    }
+    .paper-cover {
+        width: 100%; /* La portada ocupa todo el ancho disponible */
+        min-width: auto;
+    }
+}
