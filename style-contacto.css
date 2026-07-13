@@ -1,0 +1,169 @@
+/* ==========================================================================
+   RESET & ESTILOS BASE (Aislados para Contacto)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Geist Sans', -apple-system, sans-serif;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   BOTÓN VOLVER ATRÁS
+   ========================================================================== */
+.back-button {
+    position: absolute;
+    top: 4.5rem;
+    left: 3.5rem;
+    z-index: 200;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+
+.back-button:hover {
+    opacity: 0.5;
+}
+
+/* ==========================================================================
+   ESTRUCTURA CONTENEDORA (Réplica de tu estructura simétrica)
+   ========================================================================== */
+.cv-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-section {
+    width: 100%;
+    padding: 3rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.section-content {
+    width: 100%;
+    padding: 0 15rem; /* Mismo padding de 15rem para mantener la simetría exacta */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el bloque entero en la pantalla */
+}
+
+/* ==========================================================================
+   ELEMENTOS DEL FORMULARIO (Diseño idéntico a tu mockup)
+   ========================================================================== */
+.contact-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px; /* Ancho acotado para calzar con la imagen */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Separación limpia entre campos */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+/* Etiquetas en mayúscula con sus respectivos colores */
+.form-group label {
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.label-nombre { color: #C8733B; }   /* Naranja */
+.label-contacto { color: #83556A; } /* Bordó/Marrón */
+.label-mensaje { color: #5D9CEC; }  /* Azul/Celeste */
+
+/* Cajas de entrada de texto */
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 1rem;
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 0.8rem;
+    border: 1.5px solid #000000;
+    border-radius: 8px; /* Bordes redondeados idénticos al mockup */
+    outline: none;
+    background: transparent;
+}
+
+.form-textarea {
+    min-height: 200px; /* Caja de mensaje más alta */
+    resize: vertical;  /* Permite agrandar solo hacia abajo */
+}
+
+/* Botón Enviar Minimalista */
+.submit-btn {
+    align-self: flex-start;
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    opacity: 0.7;
+}
+
+/* ==========================================================================
+   RESPONSIVE / ADAPTABILIDAD PARA MÓVILES
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .section-content {
+        padding: 0 5rem; /* Reduce los márgenes laterales en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .back-button {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+
+    .cv-section {
+        padding: 4rem 0;
+    }
+
+    .section-content {
+        padding: 0 2rem; /* Margen cómodo para celulares */
+    }
+
+    .contact-title {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .contact-form {
+        gap: 1.8rem;
+    }
+}

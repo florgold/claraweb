@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactame</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/font/sans.min.css">
+    <link rel="stylesheet" href="style-contacto.css">
+</head>
+<body>
+
+    <!-- Flecha Volver Atrás (Mismo comportamiento absolute) -->
+    <a href="index.html" class="back-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <main class="cv-container">
+        <section class="cv-section section-contact">
+            <div class="section-content contact-wrapper">
+                
+                <h1 class="contact-title">Contactame</h1>
+
+                <!-- El 'action' se conectará luego con el servicio de registro (ej: Formspree) -->
+                <form action="https://formspree.io/f/TU_ID_AQUÍ" method="POST" class="contact-form">
+                    
+                    <!-- Campo Nombre -->
+                    <div class="form-group">
+                        <label for="nombre" class="label-nombre">NOMBRE</label>
+                        <input type="text" id="nombre" name="nombre" required class="form-input">
+                    </div>
+
+                    <!-- Campo Contacto -->
+                    <div class="form-group">
+                        <label for="contacto" class="label-contacto">CORREO ELECTRÓNICO</label>
+                        <input type="text" id="contacto" name="contacto" required class="form-input">
+                    </div>
+
+                    <!-- Campo Mensaje -->
+                    <div class="form-group">
+                        <label for="mensaje" class="label-mensaje">MENSAJE</label>
+                        <textarea id="mensaje" name="mensaje" required class="form-textarea"></textarea>
+                    </div>
+
+                    <!-- Botón Enviar (Invisible o minimalista para mantener tu mockup limpio, podés estilizarlo) -->
+                    <button type="submit" class="submit-btn">ENVIAR</button>
+
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

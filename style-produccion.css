@@ -1,0 +1,192 @@
+/* ==========================================================================
+   RESET & CONFIGURACIÓN FUENTE (Geist Mono Obligatorio)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Geist Mono', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Flecha Volver Atrás */
+.back-button {
+    position: absolute;
+    top: 4.5rem;
+    left: 3.5rem;
+    z-index: 200;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+.back-button:hover { opacity: 0.5; }
+
+/* Contenedor General */
+.cv-container {
+    width: 100%;
+    padding: 4rem 0 0 0; /* Espacio superior para el título */
+    display: flex;
+    flex-direction: column;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 10rem;
+    letter-spacing: -0.02em;
+}
+
+/* ==========================================================================
+   SISTEMA DE FICHEROS / CARPETAS (Estilo Mockup)
+   ========================================================================== */
+.fichero-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.folder-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Estilo común para los botones-pestaña (solapas) */
+.folder-tab {
+    position: absolute;
+    bottom: 100%; /* Se posiciona justo encima del bloque de contenido */
+    font-family: 'Geist Mono', monospace;
+    font-size: 1rem;
+    line-height: 1.3;
+    color: #000000;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-top-left-radius: 28px;  /* Redondeado suave superior */
+    border-top-right-radius: 28px;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    z-index: 2;
+}
+
+/* Contenedor del contenido interno que se expande */
+.folder-content {
+    width: 100%;
+    max-height: 50px; /* Altura inicial fija para que se vean apiladas en cascada */
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s ease;
+    padding: 0 15rem; /* Respetamos tu margen simétrico lateral */
+}
+
+/* Contenedor extra para evitar saltos en la animación */
+.inner-content {
+    padding: 3rem 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* ==========================================================================
+   ESTADOS DE APERTURA (Active)
+   ========================================================================== */
+.folder-wrapper.active .folder-content {
+    max-height: 800px; /* Un valor alto para dar margen a que se despliegue todo */
+}
+
+.folder-wrapper.active .inner-content {
+    opacity: 1;
+    transition-delay: 0.2s; /* El texto aparece suave cuando ya se abrió la carpeta */
+}
+
+/* ==========================================================================
+   CALIBRACIÓN DE COLORES Y POSICIONES DE PESTAÑAS (Idéntico a tu Imagen)
+   ========================================================================== */
+
+/* Carpeta 1: Celeste */
+.folder-audiovisual .folder-tab {
+    background-color: #C1E8F6;
+    left: 30%; /* Pestaña corrida al medio izquierdo */
+}
+.folder-audiovisual .folder-content {
+    background-color: #C1E8F6;
+}
+
+/* Carpeta 2: Bordó/Marrón */
+.folder-gestion .folder-tab {
+    background-color: #83556A;
+    left: 73%; /* Pestaña corrida a la derecha */
+}
+.folder-gestion .folder-content {
+    background-color: #83556A;
+}
+
+/* Carpeta 3: Naranja */
+.folder-musical .folder-tab {
+    background-color: #C8733B;
+    left: 1%; /* Pestaña contra el borde izquierdo */
+}
+.folder-musical .folder-content {
+    background-color: #C8733B;
+}
+
+/* Carpeta 4: Amarillo */
+.folder-escritura .folder-tab {
+    background-color: #DFB115;
+    left: 43%; /* Pestaña en el centro exacto */
+    padding: 1.5rem 3.5rem; /* Un poco más de aire por ser palabra corta */
+}
+.folder-escritura .folder-content {
+    background-color: #DFB115;
+    min-height: 100vh; /* La última carpeta estira el fondo para cerrar la página */
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .folder-content {
+        padding: 0 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .back-button {
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+        margin-bottom: 4rem;
+    }
+
+    .folder-content {
+        padding: 0 2rem;
+    }
+
+    /* En celulares reiniciamos las solapas para que no se encimen de lado */
+    .folder-tab {
+        position: relative;
+        bottom: 0;
+        left: 0 !important;
+        width: 100%;
+        border-radius: 0;
+        text-align: left;
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .folder-content {
+        max-height: 0;
+    }
+    
+    .folder-wrapper.active .folder-content {
+        max-height: 1000px;
+    }
+}
